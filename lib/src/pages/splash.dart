@@ -12,46 +12,53 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final TextEditingController regdNo = TextEditingController();
-  final TextEditingController pass = TextEditingController();
-  login() async {
-    var response = await http.post(
-        Uri.parse("http://115.240.101.71:8282/CampusPortalSOA/login"),
-        body: jsonEncode({
-          "username": regdNo.text,
-          "password": pass.text,
-          "MemberType": "S"
-        }));
-    print(response.body);
-    // print("Input text: ${regdNo.text} ${pass.text}");
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
-      body: Center(
+      // backgroundColor: Colors.teal,
+      body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                controller: regdNo,
-                decoration: const InputDecoration(hintText: "Regd No."),
-              ),
-              TextField(
-                  controller: pass,
-                  decoration: const InputDecoration(hintText: "Password")),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                    onPressed: () {
-                      login();
-                    },
-                    child: const Text("Login")),
-              )
-            ],
+          child: Align(
+            child: Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  // color: Colors.blue,
+                  decoration: const BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.all(Radius.circular(5.8))),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "Sign In",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const Text(
+                  "Access your account",
+                  style: TextStyle(fontSize: 11),
+                ),
+                const TextField(
+                  decoration: InputDecoration(hintText: "Enter Regd No."),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const TextField(
+                  decoration: InputDecoration(hintText: "Enter Pass."),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {}, child: const Text("Sign In")))
+              ],
+            ),
           ),
         ),
       ),

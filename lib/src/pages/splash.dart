@@ -54,9 +54,31 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: 10,
                 ),
                 SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        onPressed: () {}, child: const Text("Sign In")))
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Sign In"),
+                  ),
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 1,
+                        width: 50,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const Text('or sign in with'),
+                    Expanded(
+                      child: Container(
+                        height: 1,
+                        width: 50,
+                        color: Colors.grey,
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

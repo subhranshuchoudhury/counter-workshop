@@ -60,6 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     child: const Text("Sign In"),
                   ),
                 ),
+                const SizedBox(height: 30),
                 Row(
                   children: [
                     Expanded(
@@ -76,9 +77,36 @@ class _SplashScreenState extends State<SplashScreen> {
                         width: 50,
                         color: Colors.grey,
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                   ],
                 ),
+                Column(
+                  children: [
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("Google"),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("FaceBook"),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
